@@ -1,3 +1,5 @@
+import { TOAST_TYPES } from './toastTypes';
+
 export const renderToast = (toast) => {
     let toastStyle = '';
 
