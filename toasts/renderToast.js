@@ -1,27 +1,23 @@
 import { TOAST_TYPES } from './toastTypes';
 
 export const renderToast = (toast) => {
-    let toastStyle = '';
+  let message = ''
 
-    switch (toast.type) {
-      case TOAST_TYPES.SUCCESS:
-        toastStyle = 'toast-success';
-        break;
-      case TOAST_TYPES.ERROR:
-        toastStyle = 'toast-error';
-        break;
-      case TOAST_TYPES.WARNING:
-        toastStyle = 'toast-warning';
-        break;
-      case TOAST_TYPES.INFO:
-      default:
-        toastStyle = 'toast-info';
-        break;
-    }
+  switch (toast.type) {
+    case TOAST_TYPES.SUCCESS:
+      message = `This is a ${toast.type} toast`
+      break
+    case TOAST_TYPES.ERROR:
+      message = `This is a ${toast.type} toast`
+      break
+    case TOAST_TYPES.WARNING:
+      message = `This is a ${toast.type} toast`
+      break
+    case TOAST_TYPES.INFO:
+    default:
+      message = 'This is an info toast'
+      break
+  }
 
-    return (
-      <div key={toast.id} className={`toast ${toastStyle}`}>
-        {toast.message}
-      </div>
-    );
-  };
+  return message
+}
