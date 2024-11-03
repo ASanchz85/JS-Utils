@@ -51,6 +51,11 @@ function CustomForm() {
             render={({ field }) => (
               <input
                 {...field}
+                type={
+                  key === 'password' || key === 'confirmPassword'
+                    ? 'password'
+                    : 'text'
+                }
                 className={`form-input ${errors[key] ? 'isError' : ''}`}
               />
             )}
