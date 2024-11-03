@@ -29,6 +29,7 @@ function CustomForm() {
     formState: { errors }
   } = useForm<FormValues>({
     resolver: zodResolver(schema),
+    mode: 'onBlur',
     defaultValues: {
       name: '',
       email: '',
