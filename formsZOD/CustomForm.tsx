@@ -49,12 +49,13 @@ function CustomForm() {
             render={({ field }) => (
               <input
                 {...field}
-                className={`form-input ${errors ? 'isError' : ''}`}
+                className={`form-input ${errors[key] ? 'isError' : ''}`}
               />
             )}
             name={key}
             control={control}
           />
+          {errors[key] && <p className='form-error'>{errors[key].message}</p>}
         </div>
       ))}
       <button type='submit'>Submit</button>
