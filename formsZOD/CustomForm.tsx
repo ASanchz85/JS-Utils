@@ -3,6 +3,7 @@
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { z } from 'zod'
+import './customForm.css'
 
 const baseSchema = z.object({
   name: z.string().min(2, 'Name must be at least 2 characters'),
@@ -27,7 +28,13 @@ function CustomForm() {
     handleSubmit,
     formState: { errors }
   } = useForm<FormValues>({
-    resolver: zodResolver(schema)
+    resolver: zodResolver(schema),
+    defaultValues: {
+      name: '',
+      email: '',
+      password: '',
+      confirmPassword: ''
+    }
   })
 
   const onSubmit: SubmitHandler<FormValues> = (data) => {
@@ -39,11 +46,11 @@ function CustomForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className='form-container'
+      className='form_container'
     >
       {fields.map((key) => (
         <div
-          className='form-group'
+          className='form_group'
           key={key}
         >
           <label htmlFor={key}>{key}</label>
@@ -56,13 +63,13 @@ function CustomForm() {
                     ? 'password'
                     : 'text'
                 }
-                className={`form-input ${errors[key] ? 'isError' : ''}`}
+                className={`form_input ${errors[key] ? 'isError' : ''}`}
               />
             )}
             name={key}
             control={control}
           />
-          {errors[key] && <p className='form-error'>{errors[key].message}</p>}
+          {errors[key] && <p className='form_error'>{errors[key].message}</p>}
         </div>
       ))}
       <button type='submit'>Submit</button>
