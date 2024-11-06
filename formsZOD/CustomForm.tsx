@@ -1,5 +1,3 @@
-// following dependencies are needed ->     "@hookform/resolvers": "^3.9.1", "zod": "^3.23.8", "react-hook-form": "^7.53.1
-
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { z } from 'zod'
