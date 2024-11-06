@@ -1,0 +1,1 @@
+following dependencies are needed -> @hookform/resolvers zod react-hook-form
