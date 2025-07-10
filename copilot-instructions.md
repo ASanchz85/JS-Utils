@@ -84,3 +84,6 @@
 - Use `it`/`test` for individual cases
 - Use `beforeEach` for setup
 - Use `afterEach` for cleanup
+
+# Reference Link:
+https://docs.github.com/en/copilot/how-tos/custom-instructions/adding-repository-custom-instructions-for-github-copilot
