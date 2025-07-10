@@ -5,8 +5,10 @@
 - Use variable inference (`const`, `let`) whenever possible
 - Use descriptive, English names for variables, functions, and components
 - Do not add comments in the code
+- Do not add JS-Docs in the code
 - Prefer arrow functions for callbacks and traditional functions for components
 - Use PascalCase for components, camelCase for variables and functions, UPPER_CASE for constants
+- If a magic string or number is used more than once, extract it to a constant
 
 ## Component Structure
 
@@ -16,9 +18,13 @@
 - Group related hooks together at the top of the component
 - Avoid using `any` types, prefer `unknown` instead
 - Use generics for reusable components, especially for hooks
+- Use a logic combinator instead of `switch`/`case` for conditional rendering
+- Create always a handling function for asynchronous methods that will be used in the component
+- Always create an `export default` for the component at the end of the file
 
 ## Error Handling
 
+- Use `try`/`catch` for synchronous and asynchronous errors
 - Use domain-specific error types when possible
 - Prefer `undefined` or `null` over magic values
 - Use error boundaries for UI errors
